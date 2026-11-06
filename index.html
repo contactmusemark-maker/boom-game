@@ -465,7 +465,7 @@ const Dlg = {
     // name tag
     const nm = l.w === 'A' ? 'ABEESHAA' : (thought ? 'BOOM (THINKING...)' : 'BOOM');
     const col = l.w === 'A' ? C.orange : (thought ? C.wgrey : C.green);
-    pbox(bx + 150, by + 10, textW(nm, 2) + 20, 30, col, C.char, 2); text(nm, bx + 160, by + 13, { s: 2, color: C.cream, shadow: C.char });
+    pbox(bx + 150, by + 10, textW(nm, 2) + 20, 30, col, C.char, 2); text(nm, bx + 160, by + 8, { s: 2, color: C.cream, shadow: C.char });
     const shownText = l.t.slice(0, this.shown), lines = wrap(l.t, 42);
     // keep wrapping stable using full-text wrap
     let consumed = 0, y = by + 50;
@@ -935,7 +935,7 @@ function drawHowTo() {
   pbox(150, 90, 660, 360, C.cream, C.char, 4); ctx.strokeStyle = C.lime; ctx.lineWidth = 3; ctx.strokeRect(160, 100, 640, 340);
   text('HOW TO PLAY', W / 2, 116, { s: 3, align: 'center', color: C.dorange });
   const rows = [['MOVE', 'JOYSTICK  or  WASD / ARROWS'], ['TALK', 'A BUTTON  or  E / SPACE  (stand close)'], ['NEXT', 'TAP ANYWHERE  or  A BUTTON'], ['GOAL', 'SIX DAYS. SIX CHATS. ZERO REGRETS.']];
-  let y = 184; for (const [k, v] of rows) { pbox(190, y - 4, 84, 30, C.green, C.char, 2); text(k, 232, y + 2, { s: 2, align: 'center', color: C.cream }); text(v, 292, y + 2, { s: 1, color: C.char }); y += 56; }
+  let y = 176; for (const [k, v] of rows) { pbox(190, y, 100, 40, C.green, C.char, 2); text(k, 240, y + 3, { s: 2, align: 'center', color: C.cream, shadow: C.char }); text(v, 310, y + 11, { s: 1, color: C.char }); y += 56; }
   text('Walk up to Abeeshaa. When the bubble', W / 2, 394, { s: 1, align: 'center', color: C.dgrey });
   text('appears, talk to her. What could go wrong?', W / 2, 412, { s: 1, align: 'center', color: C.dgrey });
   if (((performance.now() / 500) | 0) % 2) text('TAP TO CLOSE', W / 2, 430, { s: 1, align: 'center', color: C.dorange });
